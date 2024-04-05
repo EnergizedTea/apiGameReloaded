@@ -13,7 +13,7 @@ db = SQLAlchemy(app)
 BASE_URL = '/api/v2/'
 
 class Game(db.Model):
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80), nullable=False)
     developer = db.Column(db.String(60), nullable=False)
     release_year = db.Column(db.String(4), nullable=False)
