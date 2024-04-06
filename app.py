@@ -79,7 +79,8 @@ def update_game(id):
     
     db.session.commit()
     if changed:
-        return jsonify('Game has been changed successfully'), 200
+        game = Game.query.get(id)
+        return jsonify({'Game has been changed successfully':game.show()}), 200
     else:
         return jsonify('There were no valid values to be changed', 400)
         
